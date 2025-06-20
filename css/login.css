@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+:root {
+  --gold: #ffc400;
+  --bg1: #0a0f28; /* Arka plan rengi 1 */
+  --bg2: #1b2250; /* Arka plan rengi 2 */
+  --accent1: #ff007f; /* Vurgu rengi 1 */
+  --accent2: #00e0ff; /* Vurgu rengi 2 */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh; /* Tam ekran yüksekliği */
+  display: flex; /* Esnek düzen */
+  justify-content: center; /* Yatay ortalama */
+  align-items: center; /* Dikey ortalama */
+  background: radial-gradient(
+    circle at top,
+    var(--bg2),
+    var(--bg1) 80%
+  ); /* Arka plan gradyanı */
+  overflow: hidden; /* Taşmayı gizle */
+  color: #fff;
+}
+
+/* Yumuşak gradyan ışık efekti */
+.spot {
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent1),
+    var(--accent2),
+    transparent 180deg
+  ); /* Konik gradyan */
+  filter: blur(160px); /* Bulanıklık efekti */
+  animation: rotate 25s linear infinite; /* Döndürme animasyonu */
+  pointer-events: none; /* Tıklanamaz */
+  opacity: 0.4; /* Şeffaflık */
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); /* 360 derece döndür */
+  }
+}
+
+/* Giriş paneli */
+.panel {
+  position: relative;
+  z-index: 1; /* Üstte görünmesini sağla */
+  width: 320px; /* Panel genişliği */
+  padding: 40px 32px; /* İç boşluk */
+  text-align: center; /* Metni ortala */
+  background: rgba(0, 0, 0, 0.65); /* Yarı saydam arka plan */
+  backdrop-filter: blur(10px); /* Arka plan bulanıklığı */
+  border-radius: 18px; /* Köşeleri yuvarla */
+  border: 2px solid rgba(255, 255, 255, 0.1); /* İnce kenarlık */
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Tüm paneli kapla */
+  border-radius: 18px; /* Köşeleri yuvarla */
+  padding: 2px; /* İç boşluk */
+  background: linear-gradient(
+    60deg,
+    var(--gold),
+    var(--accent2)
+  ); /* Gradyan kenarlık */
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); /* Maskeleme efekti */
+  mask-composite: exclude; /* İçeriği hariç tut */
+  pointer-events: none; /* Tıklanamaz */
+}
+
+h1 {
+  font-size: 1.8rem; /* Başlık yazı boyutu */
+  margin-bottom: 24px; /* Alt boşluk */
+  color: var(--gold); /* Altın rengi */
+  text-shadow: 0 0 10px var(--gold); /* Altın renkli gölge */
+}
+input[type="text"] {
+  width: 100%; /* Tam genişlik */
+  padding: 12px; /* İç boşluk */
+  margin: 14px 0; /* Üst ve alt boşluk */
+  border: none; /* Kenarlık yok */
+  border-radius: 6px; /* Köşeleri yuvarla */
+  background: #111; /* Koyu arka plan */
+  color: #fff; /* Yazı rengi */
+  font-size: 1rem; /* Yazı boyutu */
+}
+button {
+  width: 100%; /* Tam genişlik */
+  padding: 12px; /* İç boşluk */
+  margin-top: 18px; /* Üst boşluk */
+  border: none; /* Kenarlık yok */
+  border-radius: 6px; /* Köşeleri yuvarla */
+  background: var(--gold); /* Altın rengi arka plan */
+  color: #000; /* Yazı rengi */
+  font-weight: 600; /* Kalın yazı */
+  font-size: 1.05rem; /* Yazı boyutu */
+  cursor: pointer; /* İmleç değişimi */
+  transition: transform 0.15s, box-shadow 0.15s; /* Geçiş animasyonu */
+}
+button:hover {
+  transform: translateY(-3px); /* Hover efekti */
+  box-shadow: 0 0 12px var(--gold); /* Altın renkli gölge */
+}
+footer {
+  margin-top: 20px; /* Üst boşluk */
+  font-size: 0.7rem; /* Yazı boyutu */
+  opacity: 0.65; /* Şeffaflık */
+}

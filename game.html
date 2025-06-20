@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soru Yarışması</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="progress-wrap" id="progressWrap">
+      <div id="bar" class="progress-bar"></div>
+    </div>
+
+    <div class="content" id="content">
+      <div class="timer-wrap" id="timeWrap">
+        <div id="timerBar" class="timer-bar"></div>
+      </div>
+      <div id="counter"></div>
+      <div id="question"></div>
+      <div id="choices" class="choices"></div>
+      <h2 id="welcomeMessage"></h2>
+      <!-- Hoş geldin mesajı -->
+      <button id="returnToLogin">Giriş Ekranına Dön</button>
+      <!-- Geri dön butonu -->
+    </div>
+
+    <!-- Skor tablosu -->
+    <div class="scoreboard" id="scoreboard">
+      <h3>Son 3 Skor</h3>
+      <ul id="scoreList"></ul>
+    </div>
+
+    <!-- Skor balonu -->
+    <div id="toast" class="toast" onclick="this.classList.remove('show')">
+      <strong>Skorunuz</strong>
+      <span id="scoreText"></span>
+    </div>
+
+    <script src="javascript/game.js"></script>
+  </body>
+</html>

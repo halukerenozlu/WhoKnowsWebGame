@@ -1,0 +1,48 @@
+/* ==== Sıfırlama ve düzen ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  display: flex; /* Esnek düzen */
+  align-items: center; /* Dikey ortalama */
+  justify-content: center; /* Yatay ortalama */
+  background: #4fa735; /* Arka plan rengi */
+  color: #fff; /* Yazı rengi */
+}
+
+.container {
+  text-align: center; /* Metni ortala */
+  animation: fadeIn 0.6s ease-out; /* Fade-in animasyonu */
+}
+
+/* ==== Geri sayım stili ==== */
+h1 {
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+p {
+  margin-top: 1rem; /* Üst boşluk */
+  font-size: 1.5rem; /* Yazı boyutu */
+  opacity: 0.85; /* Şeffaflık */
+}
+
+/* Tüm blok için basit fade-in animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: scale(0.9); /* Küçültülmüş boyut */
+  }
+  to {
+    opacity: 1; /* Tam görünür */
+    transform: scale(1); /* Normal boyut */
+  }
+}
